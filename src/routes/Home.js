@@ -58,7 +58,7 @@ function Home() {
           <Side genres={availableGenres} onChoose={genreSelect} />
           <div className={styles.main}>
             <Nav />
-            <Banner />
+            <Banner movies={movies} />
             {movieFilter.map((movie) => (
               <Movie
                 key={movie.id}
