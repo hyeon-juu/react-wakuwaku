@@ -1,12 +1,16 @@
-function Nav() {
+import styles from "../css/Nav.module.css";
+import { Link } from "react-router-dom";
+
+function Nav({}) {
   return (
-    <div>
-      <i class="fa-solid fa-chevron-left"></i>
-      <div>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-solid fa-bell"></i>
-        <i class="fa-solid fa-user"></i>
-      </div>
+    <div className={styles.container}>
+      <Link to={`/`}>
+        <div>Tv Series</div>
+      </Link>
+
+      <Link to={`/movie`}>
+        <div>Movies</div>
+      </Link>
     </div>
   );
 }

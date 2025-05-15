@@ -6,9 +6,9 @@ function Detail() {
   const getMovie = async () => {
     const json = await (
       await fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=674d56103f13b338106d9e64d9646415`
+        `https://api.themoviedb.org/3/discover/tv/${id}?api_key=674d56103f13b338106d9e64d9646415`
       )
-    ).json();
+    ).json().results;
     console.log(json);
   };
   useEffect(() => {

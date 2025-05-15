@@ -1,3 +1,9 @@
 .container {
   display: flex;
 }
+img {
+  width: 100px;
+}
+.center {
+  margin: 0 300px 0 280px;
+}
