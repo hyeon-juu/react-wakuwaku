@@ -9,9 +9,11 @@ function Tv({ name, overview, poster_path, id }) {
     <div className={styles.container}>
       {tvs.map((tv) => (
         <div className={styles.tvsContainer}>
-          <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} />
+          <Link to={`/tv/${tv.id}`}>
+            <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} />
+          </Link>
           <div>
-            <Link to={`/tv/${tv.id}`}>
+            <Link to={`/tv/${tv.id}`} className={styles.posterName}>
               {tv.name.length >= 10 ? tv.name.slice(0, 10) + "..." : tv.name}
             </Link>
             <div className={styles.posterBottomContainer}>
@@ -19,9 +21,9 @@ function Tv({ name, overview, poster_path, id }) {
                 {tv.first_air_date.slice(0, 4)}
               </div>
               <div className={styles.posterIcon}>
-                <i class="fa-solid fa-heart"></i>
                 <i class="fa-solid fa-star"></i>
                 <div>{tv.vote_average}</div>
+                <i class="fa-solid fa-heart"></i>
               </div>
             </div>
           </div>

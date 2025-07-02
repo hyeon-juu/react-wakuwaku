@@ -23,6 +23,9 @@ img {
   font-size: 12px;
   opacity: 0.8;
 }
+.posterName {
+  font-weight: 600;
+}
 .posterBottomContainer {
   display: flex;
   justify-content: space-between;
@@ -32,13 +35,25 @@ img {
   display: flex;
   align-items: center;
 }
-.posterIcon,
+.posterIcon {
+  font-size: 14px;
+}
 .posterIcon i {
   font-size: 12px;
 }
-.posterIcon i {
-  margin-right: 8px;
+.posterIcon i:first-child {
+  margin: 2px 2px 0 0;
 }
-.tvsContainer:nth-child(3n) .posterIcon i:first-child {
-  color: #d12f26;
+.posterIcon i:last-child {
+  margin: 0 0 0 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.tvsContainer:nth-child(3n) .posterIcon i:last-child,
+.tvsContainer:nth-child(1) .posterIcon i:last-child {
+  color: red;
+}
+.posterIcon div,
+.posterIcon i:first-child {
+  color: #f7a501;
 }
