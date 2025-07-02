@@ -13,7 +13,10 @@ function RightSideTv({ poptvs }) {
 
         {poptvs.slice(0, 3).map((poptv) => (
           <div key={poptv.id} className={styles.detail}>
-            <img src={`https://image.tmdb.org/t/p/w500${poptv.poster_path}`} />
+            <img
+              className={styles.sideImg}
+              src={`https://image.tmdb.org/t/p/w500${poptv.poster_path}`}
+            />
             <div className={styles.info}>
               <div>{poptv.name}</div>
               <div className={styles.vote}>
@@ -29,18 +32,23 @@ function RightSideTv({ poptvs }) {
       <div className={styles.favoriteContainer}>
         <h1 className={styles.title}>Favorite</h1>
 
-        {poptvs.slice(12, 13).map((poptv) => (
-          <div key={poptv.id} className={styles.detail}>
-            <img src={`https://image.tmdb.org/t/p/w500${poptv.poster_path}`} />
-            <div className={styles.info}>
-              <div>{poptv.name}</div>
-              <div className={styles.vote}>
-                <i class="fa-solid fa-star"></i>
-                <div>{poptv.vote_average}</div>
+        {poptvs
+          .filter((poptv) => poptv.name.includes("아카데미아"))
+          .map((poptv) => (
+            <div key={poptv.id} className={styles.detail}>
+              <img
+                className={styles.sideImg}
+                src={`https://image.tmdb.org/t/p/w500${poptv.poster_path}`}
+              />
+              <div className={styles.info}>
+                <div>{poptv.name}</div>
+                <div className={styles.vote}>
+                  <i class="fa-solid fa-star"></i>
+                  <div>{poptv.vote_average}</div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
       <button>See More</button>
     </div>

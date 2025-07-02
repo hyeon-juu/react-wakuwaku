@@ -1,0 +1,44 @@
+.container {
+  /* width: 100%; */
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+img {
+  border-radius: 5px;
+  width: 150px;
+}
+
+.tvsContainer {
+  margin-top: 20px;
+}
+.posterYear {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.posterBottomContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.posterIcon {
+  display: flex;
+  align-items: center;
+}
+.posterIcon,
+.posterIcon i {
+  font-size: 12px;
+}
+.posterIcon i {
+  margin-right: 8px;
+}
+.tvsContainer:nth-child(3n) .posterIcon i:first-child {
+  color: #d12f26;
+}

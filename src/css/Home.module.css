@@ -6,4 +6,7 @@ img {
 }
 .center {
   margin: 0 300px 0 280px;
+  width: calc(100% - 280px - 300px);
+  padding: 20px;
+  overflow-x: auto;
 }

@@ -1,16 +1,24 @@
 import styles from "../css/Nav.module.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Nav({}) {
   return (
     <div className={styles.container}>
-      <Link to={`/`}>
-        <div>Tv Series</div>
-      </Link>
+      <NavLink
+        to={`/tv`}
+        className={({ isActive }) => (isActive ? styles.activeTv : styles.nav)}
+      >
+        Tv Series
+      </NavLink>
 
-      <Link to={`/movie`}>
-        <div>Movies</div>
-      </Link>
+      <NavLink
+        to={`/movie`}
+        className={({ isActive }) =>
+          isActive ? styles.activeMovie : styles.nav
+        }
+      >
+        Movies
+      </NavLink>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Tv from "../components/Tv";
 import LeftSide from "../components/LeftSide";
 import styles from "../css/Home.module.css";
 import Nav from "../components/Nav";
 import Banner from "../components/Banner";
 import RightSideTv from "../components/RightSideTv";
+import { Outlet } from "react-router-dom";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -42,17 +42,8 @@ function Home() {
           <LeftSide />
           <div className={styles.center}>
             <Nav />
-            {tvs.map((tv) => (
-              <div key={tv.id}>
-                <Banner />
-                <Tv
-                  id={tv.id}
-                  name={tv.name}
-                  overview={tv.overview}
-                  poster_path={tv.poster_path}
-                />
-              </div>
-            ))}
+            <Banner movies={movies} tvs={tvs} />
+            <Outlet context={{ movies, tvs, poptvs }} />
           </div>
           <RightSideTv poptvs={poptvs} />
         </div>

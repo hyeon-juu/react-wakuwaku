@@ -55,7 +55,7 @@ input {
 .info div:first-child {
   margin-bottom: 5px;
 }
-img {
+.sideImg {
   border-radius: 8px;
   width: 75px;
 }

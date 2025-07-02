@@ -1,4 +1,6 @@
+import Nav from "../components/Nav";
+
 function Movie() {
-  return <div>hello</div>;
+  return <div>여기는 무비</div>;
 }
 export default Movie;

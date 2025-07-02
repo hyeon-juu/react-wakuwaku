@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+}
+
+.nav,
+.nav:visited {
+  color: #eee;
+  text-decoration: none;
+}
+
+.activeTv,
+.activeMovie {
+  color: #d12f26;
+  text-decoration: none;
+}
+
+/* a {
+  margin: 20px;
+} */
