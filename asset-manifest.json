@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wakuwaku/static/css/main.857f4e40.css",
+    "main.js": "/wakuwaku/static/js/main.09462691.js",
+    "index.html": "/wakuwaku/index.html",
+    "main.857f4e40.css.map": "/wakuwaku/static/css/main.857f4e40.css.map",
+    "main.09462691.js.map": "/wakuwaku/static/js/main.09462691.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.857f4e40.css",
+    "static/js/main.09462691.js"
+  ]
+}
