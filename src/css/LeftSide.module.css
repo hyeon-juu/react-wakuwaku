@@ -52,3 +52,11 @@ h2 {
   padding: 0px 60px;
   margin: 12px 0;
 }
+
+.home i {
+  color: #d12f26;
+}
+.home {
+  border-right: 5px solid #d12f26;
+  font-weight: 600;
+}

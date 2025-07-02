@@ -8,7 +8,7 @@ function LeftSide() {
       <div>
         <h2>MENU</h2>
         <ul>
-          <li>
+          <li className={styles.home}>
             <i class="fa-solid fa-house"></i>Home
           </li>
           <li>

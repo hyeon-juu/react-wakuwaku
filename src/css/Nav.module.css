@@ -5,15 +5,20 @@
 .nav,
 .nav:visited {
   color: #eee;
+  opacity: 0.5;
   text-decoration: none;
 }
 
 .activeTv,
 .activeMovie {
-  color: #d12f26;
+  color: #eee;
   text-decoration: none;
 }
 
-/* a {
-  margin: 20px;
-} */
+.nav,
+.activeTv,
+.activeMovie {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0px 10px 18px;
+}

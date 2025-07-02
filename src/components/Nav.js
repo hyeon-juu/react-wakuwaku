@@ -6,7 +6,11 @@ function Nav({}) {
     <div className={styles.container}>
       <NavLink
         to={`/tv`}
-        className={({ isActive }) => (isActive ? styles.activeTv : styles.nav)}
+        className={({ isActive }) =>
+          isActive || window.location.pathname === "/"
+            ? styles.activeTv
+            : styles.nav
+        }
       >
         Tv Series
       </NavLink>
