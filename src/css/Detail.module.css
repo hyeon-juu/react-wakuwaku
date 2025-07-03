@@ -1,0 +1,38 @@
+.backdropContainer {
+  position: relative;
+  width: 100%;
+  /* height: auto; */
+  display: inline-block;
+}
+.backdropContainer img {
+  border-radius: 30px;
+  width: 100%;
+  display: block;
+  z-index: 0;
+}
+.backdropFade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(to bottom, transparent, #191b1f);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.detailContainer {
+  position: relative;
+}
+
+.contentContainer {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  z-index: 3;
+  display: flex;
+}
+.contentPoster {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 200px;
+}

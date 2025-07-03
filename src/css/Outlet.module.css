@@ -11,9 +11,10 @@ a {
   text-decoration: none;
 }
 
-img {
+.posterImg {
   border-radius: 5px;
   width: 150px;
+  height: 220px;
 }
 
 .tvsContainer {
@@ -56,4 +57,11 @@ img {
 .posterIcon div,
 .posterIcon i:first-child {
   color: #f7a501;
+}
+
+/* tv */
+.bigTvContainer,
+.bigMovieContainer {
+  display: flex;
+  flex-direction: column;
 }

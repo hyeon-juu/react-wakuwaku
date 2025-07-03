@@ -1,8 +1,8 @@
 import styles from "../css/Banner.module.css";
 import { useState } from "react";
 
-function Banner({ movies, tvs }) {
-  const combined = [...movies, ...tvs];
+function TvBanner({ tvs }) {
+  // const combined = [...movies, ...tvs];
   // const sortedByPopularity = combined
   //   .filter((item) => item.popularity !== undefined)
   //   .sort((a, b) => b.popularity - a.popularity);
@@ -11,10 +11,10 @@ function Banner({ movies, tvs }) {
     "약사의 혼잣말",
     "일곱 개의 대죄",
     "단다단",
-    "사카모토 데이즈",
+    // "사카모토 데이즈",
     "드래곤볼 다이마",
   ];
-  const bannerData = combined
+  const bannerData = tvs
     .filter((data) => bannerPosterNames.includes(data.title || data.name))
     .map((data) => ({
       id: data.id,
@@ -28,6 +28,7 @@ function Banner({ movies, tvs }) {
   const prev = () => {
     setIndex((i) => (i - 1 + bannerData.length) % bannerData.length);
   };
+
   return (
     <div className={styles.banner}>
       <div className={styles.bannerContainer}>
@@ -59,4 +60,4 @@ function Banner({ movies, tvs }) {
     </div>
   );
 }
-export default Banner;
+export default TvBanner;

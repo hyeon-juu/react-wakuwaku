@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import LeftSide from "../components/LeftSide";
 import styles from "../css/Home.module.css";
 import Nav from "../components/Nav";
-import Banner from "../components/Banner";
+// import Banner from "../components/TvBanner";
 import RightSideTv from "../components/RightSideTv";
 import { Outlet } from "react-router-dom";
 
@@ -42,7 +42,7 @@ function Home() {
           <LeftSide />
           <div className={styles.center}>
             <Nav />
-            <Banner movies={movies} tvs={tvs} />
+            {/* <Banner movies={movies} tvs={tvs} /> */}
             <Outlet context={{ movies, tvs, poptvs }} />
           </div>
           <RightSideTv poptvs={poptvs} />
