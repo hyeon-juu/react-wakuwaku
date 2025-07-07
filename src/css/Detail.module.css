@@ -14,7 +14,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 120%;
+  height: 150%;
   background: linear-gradient(to bottom, transparent, #191b1f);
   pointer-events: none;
   z-index: 1;
@@ -22,17 +22,93 @@
 
 .detailContainer {
   position: relative;
+  /* height: 80%; */
 }
 
 .contentContainer {
   position: absolute;
-  left: 5%;
   top: 20%;
   z-index: 3;
   display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+}
+.contentContainer div:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .contentPoster {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 200px;
+}
+.contentDetail {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contentDetail h1 {
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 30px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.yearContainer {
+  display: flex;
+  align-items: center;
+}
+.yearContainer div:nth-child(2) {
+  margin: 0 10px;
+}
+.yearContainer i {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* button */
+.buttonContainer {
+  display: flex;
+  margin-top: 20px;
+}
+.buttonContainer button {
+  background-color: #d12f26;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.buttonContainer button:first-child {
+  width: 160px;
+  border-radius: 50px;
+}
+.buttonContainer button:first-child i {
+  margin: 0 0 0 10px;
+}
+.buttonContainer button i {
+  margin: 0;
+}
+.buttonContainer button:nth-child(2),
+.buttonContainer button:last-child {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #191b1f;
+}
+
+/* cast */
+.castContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* similar */
+.similarList {
+  display: flex;
 }

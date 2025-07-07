@@ -36,7 +36,9 @@ function Home() {
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loading}>
+          <h1>Loading...</h1>
+        </div>
       ) : (
         <div className={styles.container}>
           <LeftSide />
