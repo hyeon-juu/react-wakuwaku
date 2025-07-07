@@ -18,10 +18,8 @@ function Detail({ tvs, movies }) {
     );
     const enData = await enRes.json();
 
-    // 3. videos 붙이기
     krData.videos = enData.videos;
 
-    // 4. 상태 저장
     setData(krData);
   };
 
@@ -37,11 +35,6 @@ function Detail({ tvs, movies }) {
   };
 
   const [showTrailer, setShowTrailer] = useState(false);
-  useEffect(() => {
-    if (data) {
-      console.log(data.videos); // 디버깅용
-    }
-  }, [data]);
 
   const trailer =
     data?.videos?.results?.find(
@@ -53,7 +46,7 @@ function Detail({ tvs, movies }) {
   return (
     <div>
       {data ? (
-        <div className={styles.detailBox}>
+        <div className={styles.detailPage}>
           <div className={styles.detailContainer}>
             <div className={styles.backdropContainer}>
               <img
@@ -62,14 +55,14 @@ function Detail({ tvs, movies }) {
               <div className={styles.backdropFade} />
             </div>
 
-            <div className={styles.contentContainer}>
+            <div className={styles.detailContent}>
               <div>
                 <img
                   className={styles.contentPoster}
                   src={`https://image.tmdb.org/t/p/original${data.poster_path}`}
                 />
               </div>
-              <div className={styles.contentDetail}>
+              <div className={styles.middleContent}>
                 <h1>{data?.title || data?.name}</h1>
                 <div className={styles.yearContainer}>
                   <div>{data.first_air_date}</div>
@@ -90,13 +83,11 @@ function Detail({ tvs, movies }) {
                     <i class="fa-solid fa-arrow-up-from-bracket"></i>
                   </button>
                 </div>
-                {/* ===================트레일러 */}
+                {/* ============================ trailer */}
                 {showTrailer &&
                   (trailer ? (
                     <div className={styles.trailerContainer}>
                       <iframe
-                        width="100%"
-                        height="500"
                         src={`https://www.youtube.com/embed/${trailer.key}`}
                         title={trailer.name}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -149,6 +140,7 @@ function Detail({ tvs, movies }) {
               </div>
             </div>
           </div>
+          {/*=============================== similar contents */}
           <div>
             <div className={styles.similarContainer}>
               <h2>비슷한 콘텐츠</h2>

@@ -1,3 +1,4 @@
+/* =========================== backdrop */
 .backdropContainer {
   position: relative;
   width: 100%;
@@ -19,96 +20,83 @@
   pointer-events: none;
   z-index: 1;
 }
-
+/* ================= tv,movie detail */
 .detailContainer {
   position: relative;
-  /* height: 80%; */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-.contentContainer {
+.detailContent {
   position: absolute;
-  top: 20%;
+  top: 15%;
   z-index: 3;
   display: flex;
   justify-content: space-between;
-  max-width: 100%;
-  width: 100%;
+  padding: 30px;
 }
-.contentContainer div:first-child {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .contentPoster {
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.contentDetail {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.middleContent {
+  margin: 0 30px;
 }
-.contentDetail h1 {
-  padding: 0;
+.middleContent h1 {
   margin: 0;
-  font-weight: 600;
-  font-size: 30px;
+  padding: 0;
+  font-size: 38px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
 }
 .yearContainer {
   display: flex;
+  font-size: 16px;
   align-items: center;
+  margin-bottom: 16px;
 }
-.yearContainer div:nth-child(2) {
-  margin: 0 10px;
+.yearContainer div {
+  margin-right: 10px;
 }
 .yearContainer i {
-  font-size: 10px;
   margin: 0;
-  padding: 0;
+  font-size: 16px;
 }
-
-/* button */
+/* ================================= button */
 .buttonContainer {
   display: flex;
-  margin-top: 20px;
 }
 .buttonContainer button {
-  background-color: #d12f26;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 10px;
+  font-size: 20px;
 }
 .buttonContainer button:first-child {
-  width: 160px;
-  border-radius: 50px;
+  font-weight: 600;
+  width: 220px;
 }
-.buttonContainer button:first-child i {
-  margin: 0 0 0 10px;
-}
-.buttonContainer button i {
-  margin: 0;
-}
-.buttonContainer button:nth-child(2),
-.buttonContainer button:last-child {
+.buttonContainer button:last-child,
+.buttonContainer button:nth-child(2) {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: #191b1f;
 }
-
-/* cast */
-.castContainer {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+.buttonContainer button i {
+  margin: 0;
 }
-
-/* similar */
-.similarList {
-  display: flex;
+.buttonContainer button:first-child i {
+  margin-left: 8px;
+}
+.buttonContainer button:first-child:hover {
+  color: #d12f26;
+  background-color: #191b1f;
+  transition: background-color 0.3s ease;
+}
+.buttonContainer button:last-child:hover,
+.buttonContainer button:nth-child(2):hover {
+  color: #d12f26;
 }
