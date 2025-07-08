@@ -144,32 +144,32 @@ function Detail({ tvs, movies }) {
                 <p>{data.overview.slice(0, 100)}..</p>
               </div>
 
-              <div className={styles.castContainer}>
-                <h1>성우</h1>
-                <div className={styles.castList}>
-                  {data.credits?.cast?.slice(0, 5).map((person) => (
-                    <div
-                      key={person.cast_id || person.id}
-                      className={styles.castItem}
-                    >
-                      <img
-                        src={
-                          person.profile_path
-                            ? `https://image.tmdb.org/t/p/w185${person.profile_path}`
-                            : "https://via.placeholder.com/185x278?text=No+Image"
-                        }
-                        alt={person.name}
-                      />
-                      <div>
-                        <div>{person.name}</div>
-                        <div className={styles.character}>
-                          {person.character}
+              {data.credits?.cast?.length > 0 && (
+                <div className={styles.castContainer}>
+                  <h1>성우</h1>
+                  <div className={styles.castList}>
+                    {data.credits?.cast?.slice(0, 4).map((person) => (
+                      <div
+                        key={person.cast_id || person.id}
+                        className={styles.castItem}
+                      >
+                        <img
+                          src={
+                            person.profile_path
+                              ? `https://image.tmdb.org/t/p/w185${person.profile_path}`
+                              : "https://via.placeholder.com/185x278?text=No+Image"
+                          }
+                          alt={person.name}
+                        />
+                        <div className={styles.castName}>
+                          <div>{person.name}</div>
+                          <div>{person.character}</div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             {/*=============================== similar contents */}
 
