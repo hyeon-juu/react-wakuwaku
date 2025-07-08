@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../css/Detail.module.css";
+import { useRef } from "react";
 
 function Detail({ tvs, movies }) {
   const { type, id } = useParams();
@@ -42,6 +43,17 @@ function Detail({ tvs, movies }) {
         video.site === "YouTube" &&
         ["Trailer", "Teaser", "Clip"].includes(video.type)
     ) || null;
+
+  // similar contents
+  const listRef = useRef();
+
+  const scrollLeft = () => {
+    listRef.current.scrollBy({ left: -216, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    listRef.current.scrollBy({ left: 216, behavior: "smooth" });
+  };
 
   return (
     <div>
@@ -101,59 +113,94 @@ function Detail({ tvs, movies }) {
                   <button onClick={() => setShowTrailer(false)}>닫기</button>
                 )}
 
-                <p>{data.overview}..</p>
                 <div className={styles.runtime}>
-                  {type === "movie"
-                    ? `러닝타임: ${formatRuntime(data.runtime)}`
-                    : `회당 러닝타임: ${formatRuntime(
-                        data.episode_run_time?.[0]
-                      )} · 총 ${data.number_of_episodes}화`}
+                  {type === "movie" ? (
+                    <div className={styles.row}>
+                      <span className={styles.timeAndGenres}>상영 시간</span>
+                      <span>{formatRuntime(data.runtime)}</span>
+                    </div>
+                  ) : (
+                    <div className={styles.row}>
+                      <span className={styles.timeAndGenres}>
+                        에피소드별 재생 시간
+                      </span>
+                      <span>
+                        {formatRuntime(data.episode_run_time?.[0])} · 총
+                        {data.number_of_episodes}화
+                      </span>
+                    </div>
+                  )}
                 </div>
-                <div>{data.genres.map((genre) => genre.name).join(", ")}</div>
+                <div className={styles.row}>
+                  <span className={styles.timeAndGenres}>장르</span>
+                  <span>
+                    {data.genres
+                      .slice(0, 2)
+                      .map((genre) => genre.name)
+                      .join(", ")}
+                  </span>
+                </div>
+
+                <p>{data.overview.slice(0, 100)}..</p>
               </div>
 
               <div className={styles.castContainer}>
-                <div className={styles.castContainer}>
-                  <h2>성우</h2>
-                  <div className={styles.castList}>
-                    {data.credits?.cast?.slice(0, 3).map((person) => (
-                      <div
-                        key={person.cast_id || person.id}
-                        className={styles.castItem}
-                      >
-                        <img
-                          src={
-                            person.profile_path
-                              ? `https://image.tmdb.org/t/p/w185${person.profile_path}`
-                              : "https://via.placeholder.com/185x278?text=No+Image"
-                          }
-                          alt={person.name}
-                        />
+                <h1>성우</h1>
+                <div className={styles.castList}>
+                  {data.credits?.cast?.slice(0, 5).map((person) => (
+                    <div
+                      key={person.cast_id || person.id}
+                      className={styles.castItem}
+                    >
+                      <img
+                        src={
+                          person.profile_path
+                            ? `https://image.tmdb.org/t/p/w185${person.profile_path}`
+                            : "https://via.placeholder.com/185x278?text=No+Image"
+                        }
+                        alt={person.name}
+                      />
+                      <div>
                         <div>{person.name}</div>
                         <div className={styles.character}>
-                          ({person.character})
+                          {person.character}
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
-          {/*=============================== similar contents */}
-          <div>
+            {/*=============================== similar contents */}
+
             <div className={styles.similarContainer}>
               <h2>비슷한 콘텐츠</h2>
-              <div className={styles.similarList}>
-                {data.similar?.results?.slice(0, 4).map((item) => (
-                  <div key={item.id} className={styles.similarItem}>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w200${item.poster_path}`}
-                      alt={item.title || item.name}
-                    />
-                    <div>{item.title || item.name}</div>
-                  </div>
-                ))}
+              <div className={styles.similarSlide}>
+                <button onClick={scrollLeft} className={styles.navBtn}>
+                  &lt;
+                </button>
+
+                <div className={styles.similarList} ref={listRef}>
+                  {data.similar?.results?.map((item) => {
+                    if (!item.backdrop_path) return null;
+                    return (
+                      <div key={item.id} className={styles.similarItem}>
+                        <img
+                          src={`https://image.tmdb.org/t/p/w200${item.backdrop_path}`}
+                          alt={item.title || item.name}
+                        />
+                        <div>
+                          {(item.title || item.name).length > 10
+                            ? (item.title || item.name).slice(0, 10) + "..."
+                            : item.title || item.name}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <button onClick={scrollRight} className={styles.navBtn}>
+                  &gt;
+                </button>
               </div>
             </div>
           </div>

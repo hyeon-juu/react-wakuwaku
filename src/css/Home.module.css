@@ -9,6 +9,7 @@ img {
   width: calc(100% - 280px - 300px);
   padding: 20px;
   overflow-x: auto;
+  /* height: 100vh; */
 }
 /* loading */
 .loading {
