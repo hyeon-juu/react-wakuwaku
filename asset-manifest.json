@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-wakuwaku/static/css/main.5bcfa7b8.css",
-    "main.js": "/react-wakuwaku/static/js/main.088a7749.js",
+    "main.css": "/react-wakuwaku/static/css/main.a9f8f6d0.css",
+    "main.js": "/react-wakuwaku/static/js/main.5c19d2e4.js",
     "index.html": "/react-wakuwaku/index.html",
-    "main.5bcfa7b8.css.map": "/react-wakuwaku/static/css/main.5bcfa7b8.css.map",
-    "main.088a7749.js.map": "/react-wakuwaku/static/js/main.088a7749.js.map"
+    "main.a9f8f6d0.css.map": "/react-wakuwaku/static/css/main.a9f8f6d0.css.map",
+    "main.5c19d2e4.js.map": "/react-wakuwaku/static/js/main.5c19d2e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bcfa7b8.css",
-    "static/js/main.088a7749.js"
+    "static/css/main.a9f8f6d0.css",
+    "static/js/main.5c19d2e4.js"
   ]
 }
