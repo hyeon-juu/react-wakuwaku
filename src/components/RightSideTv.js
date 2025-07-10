@@ -27,7 +27,7 @@ function RightSideTv({ poptvs }) {
           </div>
         ))}
       </div>
-      <button>See More</button>
+      <button className={styles.seeMoreButton}>See More</button>
 
       <div className={styles.favoriteContainer}>
         <h1 className={styles.title}>Favorite</h1>
@@ -50,7 +50,7 @@ function RightSideTv({ poptvs }) {
             </div>
           ))}
       </div>
-      <button>See More</button>
+      <button className={styles.seeMoreButton}>See More</button>
     </div>
   );
 }

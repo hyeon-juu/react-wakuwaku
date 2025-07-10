@@ -75,11 +75,21 @@ function Detail({ tvs, movies }) {
                 />
               </div>
               <div className={styles.middleContent}>
-                <h1>{data?.title || data?.name}</h1>
+                <h1
+                  className={
+                    (data?.title?.length || data?.name?.length) > 14
+                      ? styles.smallText
+                      : styles.normalText
+                  }
+                >
+                  {data?.title || data?.name}
+                </h1>
                 <div className={styles.yearContainer}>
-                  <div>{data.first_air_date}</div>
+                  <div>
+                    {type === "tv" ? data.first_air_date : data.release_date}
+                  </div>
                   <div>·</div>
-                  <i class="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
                   <div>{data.vote_average}</div>
                 </div>
 
@@ -113,7 +123,15 @@ function Detail({ tvs, movies }) {
                       </button>
                     </div>
                   ) : (
-                    <div>예고편이 없습니다</div>
+                    <div className={styles.trailerContainer}>
+                      <div className={styles.noTrailer}>예고편이 없습니다</div>
+                      <button
+                        onClick={() => setShowTrailer(false)}
+                        className={styles.trailerButton}
+                      >
+                        x
+                      </button>
+                    </div>
                   ))}
                 {/* {showTrailer && (
                   
