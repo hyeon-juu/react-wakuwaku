@@ -1,15 +1,16 @@
 import styles from "../css/Nav.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Nav({}) {
+  const location = useLocation();
+  const isHome = location.pathname === "/" || location.hash === "#/";
+
   return (
     <div className={styles.container}>
       <NavLink
         to={`/tv`}
         className={({ isActive }) =>
-          isActive || window.location.pathname === "/"
-            ? styles.activeTv
-            : styles.nav
+          isActive || isHome ? styles.activeTv : styles.nav
         }
       >
         Tv Series
