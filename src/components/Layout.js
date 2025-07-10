@@ -9,7 +9,7 @@ function Layout() {
     <div className={styles.container}>
       <LeftSide />
       <div className={styles.center}>
-        <Outlet /> {/* 이 부분이 바뀌는 화면! */}
+        <Outlet />
       </div>
       <RightSideTv />
     </div>
