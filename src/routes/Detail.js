@@ -55,6 +55,11 @@ function Detail({ tvs, movies }) {
     listRef.current.scrollBy({ left: 216, behavior: "smooth" });
   };
 
+  //font size
+  const titleLength = data?.title?.length || 0;
+  const nameLength = data?.name?.length || 0;
+  const isLong = Math.max(titleLength, nameLength) > 14;
+
   return (
     <div>
       {data ? (
@@ -75,13 +80,7 @@ function Detail({ tvs, movies }) {
                 />
               </div>
               <div className={styles.middleContent}>
-                <h1
-                  className={
-                    (data?.title?.length || data?.name?.length) > 14
-                      ? styles.smallText
-                      : styles.normalText
-                  }
-                >
+                <h1 className={isLong ? styles.smallText : styles.normalText}>
                   {data?.title || data?.name}
                 </h1>
                 <div className={styles.yearContainer}>

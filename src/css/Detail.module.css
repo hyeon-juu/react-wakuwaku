@@ -30,7 +30,7 @@
 }
 .detailContent {
   position: absolute;
-  top: 15%;
+  top: 12%;
   z-index: 3;
   display: flex;
   justify-content: space-between;
