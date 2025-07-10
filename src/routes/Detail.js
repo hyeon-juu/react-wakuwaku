@@ -105,13 +105,19 @@ function Detail({ tvs, movies }) {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                       />
+                      <button
+                        onClick={() => setShowTrailer(false)}
+                        className={styles.trailerButton}
+                      >
+                        X
+                      </button>
                     </div>
                   ) : (
                     <div>예고편이 없습니다</div>
                   ))}
-                {showTrailer && (
-                  <button onClick={() => setShowTrailer(false)}>닫기</button>
-                )}
+                {/* {showTrailer && (
+                  
+                )} */}
 
                 <div className={styles.runtime}>
                   {type === "movie" ? (
@@ -177,7 +183,7 @@ function Detail({ tvs, movies }) {
               <h2>비슷한 콘텐츠</h2>
               <div className={styles.similarSlide}>
                 <button onClick={scrollLeft} className={styles.navBtn}>
-                  &lt;
+                  ◀
                 </button>
 
                 <div className={styles.similarList} ref={listRef}>
@@ -199,7 +205,7 @@ function Detail({ tvs, movies }) {
                   })}
                 </div>
                 <button onClick={scrollRight} className={styles.navBtn}>
-                  &gt;
+                  ▶
                 </button>
               </div>
             </div>

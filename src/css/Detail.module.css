@@ -189,7 +189,7 @@
   align-items: center;
 }
 .similarSlide button {
-  /* padding: 0; */
+  padding: 0;
   margin: 0;
   width: 50px;
   height: 50px;
@@ -197,9 +197,10 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  background-color: #191b1f;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background-color: #d12f26;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #eee;
+  font-size: 12px;
 }
 .similarSlide button:first-child {
   position: absolute;
@@ -214,4 +215,25 @@
   opacity: 1;
   cursor: pointer;
   pointer-events: auto;
+}
+
+/* ====================trailer */
+.trailerContainer {
+  position: absolute;
+  top: 5%;
+}
+.trailerContainer iframe {
+  width: 660px;
+  height: 340px;
+}
+.trailerButton {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 0;
+  margin: 0;
 }
